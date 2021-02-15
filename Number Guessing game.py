@@ -1,8 +1,9 @@
-print("Welcome to Number Guessing Game ")
-import random
+print('-'*20)
+print("Welcome to World of Number Guessing Game")
+from random import randint
 
 def game():
-    number = random.randint(1,50)
+    number = randint(1,50)
     global gamesplayed
     gamesplayed+=1
 
@@ -16,17 +17,17 @@ def game():
         elif guess < number:
             print("Guess is too low ,guess higher ")
         else:
-            print("You won the game")
+            print("You won the game :)")
             print("Right guess ",counter,"Guesses")
         if counter > 3:
-                print("You lost Try again")
+                print("You lost Try again :(")
                 break
     global totalguesses
     totalguesses+=counter
     print("The Number is =",number)
 
-    oncemore = input("Do you want to play again? yes or no = ")
-    if oncemore=="yes":
+    oncemore = input("Do you want to play again? True or False = ")
+    if oncemore==bool(1):
         game()
     else:
         quit
@@ -34,3 +35,7 @@ def game():
 totalguesses=0
 gamesplayed=0
 game()
+
+
+
+print('-'*20)
